@@ -1,0 +1,38 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 13,
+        "sourceType": "module"
+    },
+    "rules": {
+        "comma-dangle": [
+            "warn", {
+                "arrays" : "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline"
+            }
+        ],
+
+        "indent": [ "warn", 4, { "SwitchCase": 1 } ],
+
+        "quotes": [
+            "warn",
+            "single", {
+                "allowTemplateLiterals": true,
+                "avoidEscape": true
+            }
+        ],
+
+        "keyword-spacing"     : [ "warn", { "before": true } ],
+        "no-case-declarations": [ "warn"  ],
+        "no-extra-semi"       : [ "warn"  ],
+        "no-shadow"           : [ "warn"  ],
+        "no-undef"            : [ "error" ],
+        "no-unused-vars"      : [ "warn" ],
+        "semi"                : [ "warn", "always" ]
+    }
+}
