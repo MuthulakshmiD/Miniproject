@@ -1,59 +1,75 @@
-## Title of the Project
-Small description about the project like one below
-The integration of a chatbot within a hostel booking system, aimed at streamlining the reservation process for students and improving the overall user experience.
+## Dungeon Generator
+### AIM:
+To design and develop a web-based Dungeon & Dragons dungeon generator using JavaScript that procedurally creates dungeon maps, rooms, doorways, and room descriptions as SVG graphics based on user input, without the use of third-party libraries.
 
-## About
-<!--Detailed Description about the project-->
-Tailored Chatbot for Hostel Booking System is a project designed to integrate a chatbot that leverages advanced natural language processing techniques to understand and respond to user queries to the hostel booking system. Traditional hostel booking processes are often time-consuming and involve manual searches and extensive communication with hostel staff. This project seeks to overcome these challenges by creating an easy-to-use chatbot interface that assists students in addressing inquiries.
+### ALGORITHM:
+Start the application by loading the main HTML file in a modern web browser.
 
-## Features
-<!--List the features of the project as shown below-->
-- Implements advance neural network method.
-- A framework based application for deployment purpose.
-- High scalability.
-- Less time complexity.
-- A specific scope of Chatbot response model, using json data format.
+Initialize the dungeon configuration parameters such as map size, complexity, number of rooms, and connection density.
 
-## Requirements
-<!--List the requirements of the project as shown below-->
-* Operating System: Requires a 64-bit OS (Windows 10 or Ubuntu) for compatibility with deep learning frameworks.
-* Development Environment: Python 3.6 or later is necessary for coding the sign language detection system.
-* Deep Learning Frameworks: TensorFlow for model training, MediaPipe for hand gesture recognition.
-* Image Processing Libraries: OpenCV is essential for efficient image processing and real-time hand gesture recognition.
-* Version Control: Implementation of Git for collaborative development and effective code management.
-* IDE: Use of VSCode as the Integrated Development Environment for coding, debugging, and version control integration.
-* Additional Dependencies: Includes scikit-learn, TensorFlow (versions 2.4.1), TensorFlow GPU, OpenCV, and Mediapipe for deep learning tasks.
+Create a multi-dimensional grid array to represent the dungeon layout where each cell denotes a possible map location.
 
-## System Architecture
-<!--Embed the system architecture diagram as shown below-->
+Select a random starting point on the grid to place the initial room.
 
-![Screenshot 2023-11-25 133637](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/a60c11f3-0a11-47fb-ac89-755d5f45c995)
+Generate additional rooms by expanding from existing rooms using random directions while ensuring no overlap occurs.
+
+Validate each new room placement based on grid boundaries and spacing constraints.
+
+Establish doorway connections between adjacent rooms to ensure dungeon connectivity.
+
+Apply probability-based rules to assign room properties such as room type, size, traps, and difficulty level.
+
+Randomly generate items and treasures using predefined rarity and quantity tables.
+
+Generate descriptive text for each room, including room purpose and special features.
+
+Convert the finalized dungeon grid data into SVG elements for visual representation.
+
+Render the SVG dungeon map dynamically in the browser interface.
+
+Execute built-in unit tests to verify dungeon generation logic and rendering accuracy.
+
+Display the final dungeon map and associated room details to the user.
+
+### PROCEDURE
+Create the project structure with separate folders for dungeon logic, room generation, items, UI components, and utilities.
+
+Develop the main entry point (index.html) to load the application modules using native JavaScript module imports.
+
+Write JavaScript functions to initialize dungeon parameters based on user input.
+
+Implement a grid-based dungeon generation system using a multi-dimensional array.
+
+Develop room generation logic that places rooms randomly while preventing overlap and invalid placements.
+
+Implement algorithms to connect rooms using doors and corridors to maintain accessibility across the dungeon.
+
+Define probability tables for traps, items, and room conditions to introduce randomness and replayability.
+
+Use utility functions for random number generation and text formatting.
+
+Generate SVG elements programmatically to visually represent rooms, walls, and doorways.
+
+Dynamically inject generated HTML and SVG content into the browser using template literals.
+
+Create a custom unit testing framework to validate core logic without relying on third-party libraries.
+
+Run unit tests automatically during page load to ensure application stability.
+
+Display the generated dungeon map along with room descriptions and item details.
+
+Test the application across modern browsers to ensure compatibility and responsiveness.
 
 
-## Output
+### OUTPUT:
 
-<!--Embed the Output picture at respective places as shown below as shown below-->
-#### Output1 - Name of the output
+![WhatsApp Image 2025-12-26 at 12 22 10](https://github.com/user-attachments/assets/6a1ce530-8219-4c8d-9e54-4ce273849212)
 
-![Screenshot 2023-11-25 134037](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/8c2b6b5c-5ed2-4ec4-b18e-5b6625402c16)
-
-#### Output2 - Name of the output
-![Screenshot 2023-11-25 134253](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/5e05c981-05ca-4aaa-aea2-d918dcf25cb7)
-
-Detection Accuracy: 96.7%
-Note: These metrics can be customized based on your actual performance evaluations.
-
-
-## Results and Impact
-<!--Give the results and impact as shown below-->
-The Sign Language Detection System enhances accessibility for individuals with hearing and speech impairments, providing a valuable tool for inclusive communication. The project's integration of computer vision and deep learning showcases its potential for intuitive and interactive human-computer interaction.
-
-This project serves as a foundation for future developments in assistive technologies and contributes to creating a more inclusive and accessible digital environment.
-
-## Articles published / References
-1. N. S. Gupta, S. K. Rout, S. Barik, R. R. Kalangi, and B. Swampa, “Enhancing Heart Disease Prediction Accuracy Through Hybrid Machine Learning Methods ”, EAI Endorsed Trans IoT, vol. 10, Mar. 2024.
-2. A. A. BIN ZAINUDDIN, “Enhancing IoT Security: A Synergy of Machine Learning, Artificial Intelligence, and Blockchain”, Data Science Insights, vol. 2, no. 1, Feb. 2024.
+![WhatsApp Image 2025-12-26 at 12 21 31](https://github.com/user-attachments/assets/a720a82c-fba7-47e6-bcf0-f5b0807c9b2c)
 
 
 
+The application successfully generates a Dungeon & Dragons dungeon map based on user input. The output includes a procedurally generated dungeon layout with rooms, doorway connections, traps, and items displayed as SVG graphics. The generated dungeon and its details are rendered correctly in the browser, and the system functionality is verified using a custom unit testing framework.
 
+### RESULT
+Thus, a procedural Dungeon & Dragons dungeon generator was successfully implemented using JavaScript, demonstrating procedural content generation, modular design, and dynamic SVG rendering without relying on third-party libraries.
