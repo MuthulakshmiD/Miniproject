@@ -1,48 +1,74 @@
-# JavaScript D&D Generator
+## Dungeon Generator
+### AIM:
+To design and develop a web-based Dungeon & Dragons dungeon generator using JavaScript that procedurally creates dungeon maps, rooms, doorways, and room descriptions as SVG graphics based on user input, without the use of third-party libraries.
 
-> [!WARNING]
-> This codebase is no longer being developed. A complete rebuild from the ground up using React & TypeScript has been developed with the goal of resolving deficiencies in the original architecture and building support for more customization options. Check it out at [dnd.mysticwaffle.com](https://dnd.mysticwaffle.com/)!
+### ALGORITHM:
+Start the application by loading the main HTML file in a modern web browser.
 
-D&D Generator at [v1.mysticwaffle.com](https://v1.mysticwaffle.com/) is a web application, forged by AJ, a Human Sorcerer, written (mostly) in JavaScript. The app implements a procedural generation algorithm to draw Dungeons & Dragons game maps as SVG graphics using user input. The maps are accompanied by randomly generated room descriptions, doorway connections, and items.
+Initialize the dungeon configuration parameters such as map size, complexity, number of rooms, and connection density.
 
-The application has zero 3rd party library dependencies. Functionally is validated on page load by a custom built unit testing framework. The API, which is not included in this repository, servers as a backend for storing user generated content.
+Create a multi-dimensional grid array to represent the dungeon layout where each cell denotes a possible map location.
 
-This project is a work in progress with numerous features and configuration options still to come.
+Select a random starting point on the grid to place the initial room.
 
-## Screenshot
+Generate additional rooms by expanding from existing rooms using random directions while ensuring no overlap occurs.
 
-![D&D Dungeon Generator App](/img/screenshot.jpg)
+Validate each new room placement based on grid boundaries and spacing constraints.
 
-## Application Design
+Establish doorway connections between adjacent rooms to ensure dungeon connectivity.
 
-The app uses native browser support for importing JavaScript modules, and so will only run in modern browsers.
+Apply probability-based rules to assign room properties such as room type, size, traps, and difficulty level.
 
-HTML is generated via template literals.
+Randomly generate items and treasures using predefined rarity and quantity tables.
 
-A multi-dimensional array is used to represent the map grid. Rooms and doorway connections are procedurally generated on the grid and drawn as an SVG element. Room descriptions, traps, doorways, and items are randomly assigned to each room based on probability tables for attributes such as rarity, condition, and quantity.
+Generate descriptive text for each room, including room purpose and special features.
 
-The application is organized as follows, with a top level `/index.html` and `/app/app.js` files that initialize the app and loads scrips in the following directories:
+Convert the finalized dungeon grid data into SVG elements for visual representation.
 
-- `/app/attribute/*` - Contains configurations for reusable attributes such as size and condition
-- `/app/controller/*` - Application controller code
-- `/app/dungeon/*` - Code related to generating dungeons
-- `/app/item/*` - Code related to generating items
-- `/app/name/*` - Code related to generating names (WIP, currently disabled)
-- `/app/room/*` - Code related to, you guessed it, generating rooms
-- `/app/ui/*` - HTML generators
-- `/app/unit/*` - Unit testing library
-- `/app/utility/*` - Utilities such as randomization and text formatters
+Render the SVG dungeon map dynamically in the browser interface.
 
-## Unit Tests
+Execute built-in unit tests to verify dungeon generation logic and rendering accuracy.
 
-Because 3rd party libraries have been avoided, a custom unit test framework can be found in the `/unit/*` directory. Tests are run by navigating to `/unit.html` as well as on every page load of the main app. Test output is printed to the browser.
+Display the final dungeon map and associated room details to the user.
 
-New unit test suites must be added to the test manifest in `/unit/suite.js`.
+### PROCEDURE
+Create the project structure with separate folders for dungeon logic, room generation, items, UI components, and utilities.
 
-## Creative Commons
+Develop the main entry point (index.html) to load the application modules using native JavaScript module imports.
 
-Want to add a feature? Improve something? Fork this repo and open a pull request.
+Write JavaScript functions to initialize dungeon parameters based on user input.
 
-I ask you don't use this for commercial use without permission and link attribution back to this repo under the Creative Commons Attribution-NonCommercial license.
+Implement a grid-based dungeon generation system using a multi-dimensional array.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">D&D Dungeon Generator</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://v1.mysticwaffle.com/" property="cc:attributionName" rel="cc:attributionURL">Mystic Waffle</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+Develop room generation logic that places rooms randomly while preventing overlap and invalid placements.
+
+Implement algorithms to connect rooms using doors and corridors to maintain accessibility across the dungeon.
+
+Define probability tables for traps, items, and room conditions to introduce randomness and replayability.
+
+Use utility functions for random number generation and text formatting.
+
+Generate SVG elements programmatically to visually represent rooms, walls, and doorways.
+
+Dynamically inject generated HTML and SVG content into the browser using template literals.
+
+Create a custom unit testing framework to validate core logic without relying on third-party libraries.
+
+Run unit tests automatically during page load to ensure application stability.
+
+Display the generated dungeon map along with room descriptions and item details.
+
+Test the application across modern browsers to ensure compatibility and responsiveness.
+
+### OUTPUT:
+
+
+<img width="1600" height="711" alt="image" src="https://github.com/user-attachments/assets/836718ee-146c-4aa6-b481-94b6fc7ad4ce" />
+
+<img width="1600" height="726" alt="image" src="https://github.com/user-attachments/assets/fc33aa60-6446-4f46-8d5b-fbfe88bba7c9" />
+
+
+The application successfully generates a Dungeon & Dragons dungeon map based on user input. The output includes a procedurally generated dungeon layout with rooms, doorway connections, traps, and items displayed as SVG graphics. The generated dungeon and its details are rendered correctly in the browser, and the system functionality is verified using a custom unit testing framework.
+
+### RESULT
+Thus, a procedural Dungeon & Dragons dungeon generator was successfully implemented using JavaScript, demonstrating procedural content generation, modular design, and dynamic SVG rendering without relying on third-party libraries.
